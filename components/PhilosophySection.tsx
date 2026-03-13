@@ -38,7 +38,7 @@ export default function PhilosophySection() {
                 className="expr_img"
                 width={250}
                 height={371}
-              />
+              />                                                                                                                       
 
               <Image
                 src="/images/1691673621069.png"
