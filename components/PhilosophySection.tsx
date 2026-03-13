@@ -34,7 +34,7 @@ export default function PhilosophySection() {
               style={{ position: "relative" }}
             >
               <Image
-                src="/images/1691673621038.JPG"
+                src="/images/1691673621038.jfif"
                 alt="experience"
                 className="expr_img"
                 width={250}
