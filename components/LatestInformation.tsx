@@ -59,13 +59,9 @@ export default function LatestInformation() {
       <div className="bg_information">
         <div className="container">
           <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation]}
             navigation
             loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
             spaceBetween={20}
             slidesPerView={3}
             breakpoints={{
@@ -88,9 +84,9 @@ export default function LatestInformation() {
                     <Image
                       src={blog.image}
                       alt={blog.title}
-                      width={300}
-                      height={200}
-                      style={{ width: "100%", height: "auto" }}
+                      width={392}
+                      height={260}
+                      style={{ width: "392px", height: "260px" }}
                     />
                   </Link>
 
