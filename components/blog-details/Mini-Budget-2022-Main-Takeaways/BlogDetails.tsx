@@ -111,7 +111,7 @@ export default function BlogDetails() {
                       />
                     </figure>
 
-                    <h5>Discover new adventures over the world</h5>
+                    <h5 className="title">Discover new adventures over the world</h5>
                     <div className="post-info">2023-08-11</div>
                   </Link>
                 </article>
@@ -128,7 +128,7 @@ export default function BlogDetails() {
                       />
                     </figure>
 
-                    <h5>Living in downtown in the biggest cities</h5>
+                    <h5 className="title">Living in downtown in the biggest cities</h5>
                     <div className="post-info">2023-08-11</div>
                   </Link>
                 </article>
@@ -145,7 +145,7 @@ export default function BlogDetails() {
                       />
                     </figure>
 
-                    <h5>Discover new adventures over the world</h5>
+                    <h5 className="title">Discover new adventures over the world</h5>
                     <div className="post-info">2023-08-11</div>
                   </Link>
                 </article>
@@ -162,7 +162,7 @@ export default function BlogDetails() {
                       />
                     </figure>
 
-                    <h5>Living in downtown in the biggest cities</h5>
+                    <h5 className="title">Living in downtown in the biggest cities</h5>
                     <div className="post-info">2023-08-11</div>
                   </Link>
                 </article>
@@ -179,7 +179,7 @@ export default function BlogDetails() {
                       />
                     </figure>
 
-                    <h5>Mini Budget 2022: Main Takeaways</h5>
+                    <h5 className="title">Mini Budget 2022: Main Takeaways</h5>
                     <div className="post-info">2023-08-11</div>
                   </Link>
                 </article>
