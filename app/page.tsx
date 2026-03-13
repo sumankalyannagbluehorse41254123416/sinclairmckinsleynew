@@ -9,8 +9,6 @@ import ClientSpeak from "@/components/ClientSpeak";
 import { fetchPageData } from "@/service/fetchdata.services";
 import { headers } from "next/headers";
 
-
-
 const stripHtml = (html: string) => (html ? html.replace(/<[^>]*>/g, "") : "");
 
 // ✅ Define a lightweight type for your CMS structure
@@ -30,8 +28,6 @@ interface SiteData {
     pageItemdataWithSubsection?: Section[];
   };
 }
-
-
 
 export default async function Home() {
   const rqHeaders = await headers();
@@ -55,20 +51,26 @@ export default async function Home() {
     siteData.data?.pageItemdataWithSubsection ||
     [];
 
-    const sliderImages =
-  sections?.[0]?.subsections
-    ?.map((item: Section) => item.image)
-    .filter(Boolean) as string[] || [];
+  const sliderImages =
+    (sections?.[0]?.subsections
+      ?.map((item: Section) => item.image)
+      .filter(Boolean) as string[]) || [];
+
+  const overBannerData = sections?.[1]?.subsections || [];
+
+  const aboutSection = sections?.[2];
+
   return (
-   <>
-   <SliderBanner slides={sliderImages} />
-   <OverBanner />
-   <AboutWelcome />
-   <PhilosophySection />
-   <OurServices />
-   <LatestInformation />
-   <Industries />
-   <ClientSpeak />
-   </>
+    <>
+      <SliderBanner slides={sliderImages} />
+      <OverBanner data={overBannerData} />
+      <AboutWelcome data={aboutSection} />
+
+      <PhilosophySection />
+      <OurServices />
+      <LatestInformation />
+      <Industries />
+      <ClientSpeak />
+    </>
   );
 }
