@@ -1,6 +1,25 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "font-awesome/css/font-awesome.min.css";
 import "./globals.css";
+
+import "../public/css/blog_style.css";
+import "../public/css/bootstrap.min.css";
+import "../public/css/font-awesome.css";
+import "../public/css/MobileView.css";
+import "../public/css/navbar.css";
+import "../public/css/remixicon.css";
+import "../public/css/services_all_details.css";
+import "../public/css/slick-theme.css";
+import "../public/css/slick.css";
+import "../public/css/style.css";
+
+import TopHeader from "@/components/TopHeader";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <TopHeader />
+           <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
