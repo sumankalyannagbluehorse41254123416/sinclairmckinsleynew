@@ -530,9 +530,9 @@ blockquote{
     transition: all 300ms ease;
 }
 
-.latest-news .post:hover .thumb img {
+/* .latest-news .post:hover .thumb img {
     opacity: .80;
-}
+} */
 
 .latest-news .post h5 {
     position: relative;
@@ -540,6 +540,7 @@ blockquote{
     font-size: 15px;
     line-height: 24px;
     font-weight: 500;
+    color: #0d6efd;
 }
 
 .latest-news .post .post-info {
