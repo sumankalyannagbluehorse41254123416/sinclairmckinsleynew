@@ -3,14 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function SliderBanner() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+interface SliderBannerProps {
+  slides: string[];
+}
 
-  const slides = [
-    "/images/banking_img11.jpg",
-    "/images/banner_img2.png",
-    "/images/slider3.jpg",
-  ];
+export default function SliderBanner({ slides }: SliderBannerProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = (step: number) => {
     let newIndex = currentSlide + step;
@@ -25,14 +23,17 @@ export default function SliderBanner() {
     nextSlide(step);
   };
 
-  // Auto slide every 4 seconds
   useEffect(() => {
+    if (!slides.length) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides]);
+
+  if (!slides.length) return null;
 
   return (
     <div id="slider_banner">
@@ -46,13 +47,12 @@ export default function SliderBanner() {
         </div>
       ))}
 
-      {/* Controlling arrows */}
       <span
         className="controls"
         id="left-arrow"
         onClick={() => prevSlide(-1)}
       >
-        <i className="fa fa-arrow-left" aria-hidden="true"></i>
+        <i className="fa fa-arrow-left" />
       </span>
 
       <span
@@ -60,7 +60,7 @@ export default function SliderBanner() {
         id="right-arrow"
         onClick={() => nextSlide(1)}
       >
-        <i className="fa fa-arrow-right" aria-hidden="true"></i>
+        <i className="fa fa-arrow-right" />
       </span>
     </div>
   );

@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       "wip.tezcommerce.com",
-      "www.sinclairmckinsley.co.uk"
+      "www.sinclairmckinsley.co.uk",
+      "ik.imagekit.io",   // ✅ add this
     ],
   },
 };
