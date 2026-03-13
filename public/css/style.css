@@ -463,7 +463,12 @@ a {
     z-index: 9;
     bottom: 26px;
     left: 186px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
 }
+
 
 .over_banner {
     height: 280px !important;
@@ -474,12 +479,13 @@ a {
     background-color: #122f28;
     font-size: 18px;
     font-weight: 600;
-    padding: 17px 20px;
+    padding: 17px 20px 3px;
 }
 
 .award_icon {
   font-size: 27px;
-  margin-bottom: 19px;
+  margin-bottom: 13px;
+  
 }
 
 .expri_btn a:hover {
