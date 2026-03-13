@@ -60,13 +60,20 @@ export default async function Home() {
 
   const aboutSection = sections?.[2];
 
+  const philosophySection = sections?.[3];
+  const experienceSection = sections?.[4];
+
   return (
     <>
       <SliderBanner slides={sliderImages} />
       <OverBanner data={overBannerData} />
       <AboutWelcome data={aboutSection} />
 
-      <PhilosophySection />
+      <PhilosophySection
+        philosophy={philosophySection}
+        experience={experienceSection}
+      />
+
       <OurServices />
       <LatestInformation />
       <Industries />
