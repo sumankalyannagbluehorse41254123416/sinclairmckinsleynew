@@ -4133,6 +4133,7 @@ fieldset:disabled .btn {
 .card-subtitle {
   margin-top: -0.25rem;
   margin-bottom: 0;
+  color: #0d6efd !important;
 }
 .card-text:last-child {
   margin-bottom: 0;
