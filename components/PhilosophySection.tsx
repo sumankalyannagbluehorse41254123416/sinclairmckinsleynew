@@ -36,16 +36,16 @@ export default function PhilosophySection() {
                 src="https://wip.tezcommerce.com:3304/admin/module/70/1691673621038.JPG"
                 alt="experience"
                 className="expr_img"
-                width={500}
-                height={400}
+                width={250}
+                height={371}
               />
 
               <Image
                 src="https://wip.tezcommerce.com:3304/admin/module/70/1691673621069.png"
                 alt="philosophy"
                 className="philod"
-                width={200}
-                height={200}
+                width={233}
+                height={153}
               />
 
               <div className="new_li">
