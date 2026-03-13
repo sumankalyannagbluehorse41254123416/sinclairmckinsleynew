@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RiAwardFill } from "react-icons/ri";
 
 export default function PhilosophySection() {
   return (
@@ -33,7 +34,7 @@ export default function PhilosophySection() {
               style={{ position: "relative" }}
             >
               <Image
-                src="/images/1691673621038.JPG"
+                src="/images/1691673621038.jfif"
                 alt="experience"
                 className="expr_img"
                 width={250}
@@ -58,8 +59,9 @@ export default function PhilosophySection() {
               </div>
 
               <div className="expri_btn">
-                <a href="javascript:void(0);">
-                  <i className="ri-award-fill"></i> 20 Years Experienced
+                <a href="javascript:void(0);" className="flex items-center gap-2">
+                  <RiAwardFill className="award_icon" />
+                  20 Years Experienced
                 </a>
               </div>
             </div>
