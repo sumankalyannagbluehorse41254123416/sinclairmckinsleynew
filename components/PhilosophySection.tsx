@@ -34,7 +34,7 @@ export default function PhilosophySection() {
               style={{ position: "relative" }}
             >
               <Image
-                src="https://wip.tezcommerce.com:3304/admin/module/70/1691673621038.JPG"
+                src="/images/1691673621038.JPG"
                 alt="experience"
                 className="expr_img"
                 width={250}
@@ -42,7 +42,7 @@ export default function PhilosophySection() {
               />
 
               <Image
-                src="https://wip.tezcommerce.com:3304/admin/module/70/1691673621069.png"
+                src="/images/1691673621069.png"
                 alt="philosophy"
                 className="philod"
                 width={233}
