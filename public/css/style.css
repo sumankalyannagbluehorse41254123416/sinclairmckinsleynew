@@ -477,8 +477,9 @@ a {
     padding: 17px 20px;
 }
 
-.expri_btn a i {
-    font-size: 22px;
+.award_icon {
+  font-size: 27px;
+  margin-bottom: 19px;
 }
 
 .expri_btn a:hover {
@@ -1280,6 +1281,7 @@ body .sk-reviewer-pic img{
 
 .contact_pay a {
     border-radius: 3px;
+    color: #0d6efd;
 }
 
 .submit_btn button {
