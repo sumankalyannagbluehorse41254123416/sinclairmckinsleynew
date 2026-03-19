@@ -9,9 +9,11 @@ import ClientSpeak from "@/components/ClientSpeak";
 import { fetchPageData } from "@/service/fetchdata.services";
 import { headers } from "next/headers";
 
-const stripHtml = (html: string) => (html ? html.replace(/<[^>]*>/g, "") : "");
+// ✅ Remove HTML tags
+const stripHtml = (html: string) =>
+  html ? html.replace(/<[^>]*>/g, "") : "";
 
-// ✅ Define a lightweight type for your CMS structure
+// ✅ Types
 interface Section {
   title?: string;
   shortDescription?: string;
@@ -19,7 +21,7 @@ interface Section {
   image?: string;
   bannerImage?: string;
   subsections?: Section[];
-  [key: string]: unknown; // safer than `any`
+  [key: string]: unknown;
 }
 
 interface SiteData {
@@ -39,29 +41,29 @@ export default async function Home() {
   try {
     siteData = await fetchPageData(
       { host, ...headersObj },
-      "03ea79fd-05e8-4826-918e-e96fbec3febf",
+      "03ea79fd-05e8-4826-918e-e96fbec3febf"
     );
   } catch (error) {
     console.error("Fetch error:", error);
   }
-  console.log("SITE DATA:", siteData);
 
   const sections =
     siteData.pageItemdataWithSubsection ||
     siteData.data?.pageItemdataWithSubsection ||
     [];
 
+  // ✅ Sections Mapping
   const sliderImages =
     (sections?.[0]?.subsections
       ?.map((item: Section) => item.image)
       .filter(Boolean) as string[]) || [];
 
   const overBannerData = sections?.[1]?.subsections || [];
-
   const aboutSection = sections?.[2];
-
   const philosophySection = sections?.[3];
   const experienceSection = sections?.[4];
+  const industriesSection = sections?.[5];
+  const servicesSection = sections?.[6];
 
   return (
     <>
@@ -74,9 +76,23 @@ export default async function Home() {
         experience={experienceSection}
       />
 
-      <OurServices />
+      {/* ✅ Dynamic Our Services */}
+      <OurServices
+        sectionTitle={stripHtml(servicesSection?.title || "")}
+        shortDescription={stripHtml(
+          servicesSection?.shortDescription || ""
+        )}
+        subSections={
+          servicesSection?.subsections?.map((item: Section) => ({
+            image: item.image || "",
+            title: stripHtml(item.title || ""),
+            description: stripHtml(item.description || ""),
+          })) || []
+        }
+      />
+
       <LatestInformation />
-      <Industries />
+      <Industries data={industriesSection} />
       <ClientSpeak />
     </>
   );
