@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  function savecontact(): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className="pt-5 pb-5 footer">
       <div className="container footer_icon_box">

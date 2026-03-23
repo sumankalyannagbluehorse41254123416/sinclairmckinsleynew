@@ -66,13 +66,16 @@ export default async function ServicePage({
   const bannerSection = sections[0];
   const bookkeepingSection = sections[1];
   const benefitsSection = sections[2];
-
+  const scheduleSection = sections[3];
   return (
     <>
       <ServiceDetails section={bannerSection} />
       <BookkeepingSection section={bookkeepingSection} />
       <BenefitsSection section={benefitsSection} />
-      <ScheduleMeeting />
+      <ScheduleMeeting
+        title={scheduleSection?.title}
+        image={scheduleSection?.image}
+      />
     </>
   );
 }

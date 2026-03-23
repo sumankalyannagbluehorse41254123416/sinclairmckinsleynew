@@ -10,8 +10,7 @@ import { fetchPageData } from "@/service/fetchdata.services";
 import { headers } from "next/headers";
 
 // ✅ Remove HTML tags
-const stripHtml = (html: string) =>
-  html ? html.replace(/<[^>]*>/g, "") : "";
+const stripHtml = (html: string) => (html ? html.replace(/<[^>]*>/g, "") : "");
 
 // ✅ Types
 interface Section {
@@ -41,7 +40,7 @@ export default async function Home() {
   try {
     siteData = await fetchPageData(
       { host, ...headersObj },
-      "03ea79fd-05e8-4826-918e-e96fbec3febf"
+      "03ea79fd-05e8-4826-918e-e96fbec3febf",
     );
   } catch (error) {
     console.error("Fetch error:", error);
@@ -64,7 +63,7 @@ export default async function Home() {
   const experienceSection = sections?.[4];
   const industriesSection = sections?.[5];
   const servicesSection = sections?.[6];
-
+  const latestInfoSection = sections[8];
   return (
     <>
       <SliderBanner slides={sliderImages} />
@@ -79,9 +78,7 @@ export default async function Home() {
       {/* ✅ Dynamic Our Services */}
       <OurServices
         sectionTitle={stripHtml(servicesSection?.title || "")}
-        shortDescription={stripHtml(
-          servicesSection?.shortDescription || ""
-        )}
+        shortDescription={stripHtml(servicesSection?.shortDescription || "")}
         subSections={
           servicesSection?.subsections?.map((item: Section) => ({
             image: item.image || "",
@@ -91,7 +88,7 @@ export default async function Home() {
         }
       />
 
-      <LatestInformation />
+      <LatestInformation section={latestInfoSection} />
       <Industries data={industriesSection} />
       <ClientSpeak />
     </>
