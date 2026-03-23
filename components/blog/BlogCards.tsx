@@ -46,7 +46,7 @@ export default function BlogCards() {
       </Link>
 
       {/* CARD 2 */}
-      <Link href="/blog-details/living-in-downtown-in-the-biggest-city">
+      <Link href="/blog-details/Living-in-downtown-in-the-biggest-city">
         <div className="card-container">
           <div className="card-image">
             <Image

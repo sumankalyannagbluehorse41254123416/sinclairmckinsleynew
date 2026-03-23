@@ -1,13 +1,17 @@
 import Image from "next/image";
 
-export default function BlogMainPost() {
+export default function BlogMainPost({
+  image,
+}: {
+  image: string;
+}) {
   return (
     <div className="cs-main-post">
       <figure>
         <Image
           className="blgs_img"
-          src="/images/1691992496812.png"
-          alt=""
+          src={image}
+          alt="blog-image"
           width={800}
           height={500}
         />
