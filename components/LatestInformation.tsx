@@ -1,7 +1,9 @@
 "use client";
 
+import { useRef } from "react"; // ✅ ADD THIS
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -23,16 +25,10 @@ const blogData = [
     link: "/blog-details/living-in-downtown-in-the-biggest-city",
   },
   {
-    title: "Discover new adventures over the world",
+    title: "Mini Budget 2022: Main Takeaways",
     image:
-      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992429352.jpg",
-    link: "/blog-details/Discover-new-adventure-over-the-world",
-  },
-  {
-    title: "Living in downtown in the biggest cities",
-    image:
-      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992333320.jpg",
-    link: "/blog-details/Living-in-downtown-in-the-biggest-cities",
+      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1692276875466.jpg",
+    link: "/blog-details/Mini-Budget-2022-Main-Takeaways",
   },
   {
     title: "Mini Budget 2022: Main Takeaways",
@@ -40,9 +36,18 @@ const blogData = [
       "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1692276875466.jpg",
     link: "/blog-details/Mini-Budget-2022-Main-Takeaways",
   },
+  {
+    title: "Living in downtown in the biggest cities",
+    image:
+      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992496812.png",
+    link: "/blog-details/living-in-downtown-in-the-biggest-city",
+  },
 ];
 
 export default function LatestInformation() {
+  const prevRef = useRef(null); // ✅ ADD
+  const nextRef = useRef(null); // ✅ ADD
+
   return (
     <section id="Latest_information">
       <div className="header_information">
@@ -50,32 +55,43 @@ export default function LatestInformation() {
 
         <p>
           In today's rapidly changing world, staying up to date is essential.
-          Our commitment to providing you with the latest information ensures
-          that you are well-equipped to make informed decisions, navigate
-          complexities, and seize new opportunities.
         </p>
       </div>
 
       <div className="bg_information">
-        <div className="container">
+        <div className="container slider_wrapper relative"> {/* ✅ ADD relative */}
+
+          {/* CUSTOM BUTTONS */}
+          <div ref={prevRef} className="custom-prev">
+            <FiChevronLeft size={14} />
+          </div>
+
+          <div ref={nextRef} className="custom-next">
+            <FiChevronRight size={14} />
+          </div>
+
           <Swiper
-            modules={[Navigation]}
-            navigation
+            modules={[Navigation, Autoplay]}
+            onBeforeInit={(swiper) => {   // ✅ IMPORTANT FIX
+              (swiper.params.navigation as any).prevEl = prevRef.current;
+              (swiper.params.navigation as any).nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             loop={true}
             spaceBetween={20}
             slidesPerView={3}
             breakpoints={{
-              320: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              320: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
-            className="customer-logos"
           >
             {blogData.map((blog, index) => (
               <SwiperSlide key={index}>
@@ -84,9 +100,8 @@ export default function LatestInformation() {
                     <Image
                       src={blog.image}
                       alt={blog.title}
-                      width={392}
-                      height={260}
-                      style={{ width: "392px", height: "260px" }}
+                      width={400}
+                      height={250}
                     />
                   </Link>
 
@@ -97,6 +112,7 @@ export default function LatestInformation() {
               </SwiperSlide>
             ))}
           </Swiper>
+
         </div>
 
         <div className="view_more mt-5 text-center">

@@ -116,6 +116,7 @@
 
 .contact_right img {
     width: 100%;
+    height: auto;
 }
 
 .mt_same {
@@ -138,6 +139,11 @@
 
 .wpb_wrapper_1 {
     margin-top: 80px;
+}
+@media (max-width: 767px){
+    .wpb_wrapper_1 {
+    margin-top: 36px;
+}
 }
 
 .account_statement:hover {
@@ -166,7 +172,7 @@
         text-align: center;
     }
     .contact_right {
-        margin-bottom: 212px;
+        margin-bottom: 12px;
         margin-top: 60px;
     }
 }

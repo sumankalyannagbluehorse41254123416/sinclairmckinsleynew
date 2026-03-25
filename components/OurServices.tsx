@@ -67,7 +67,7 @@ export default function OurServices() {
           <div className="col-lg-12">
             <div className="heading">
               <h2>Our Services</h2>
-              <h2></h2>
+              
               <p className="para">
                 Welcome to a world of accountancy empowerment where your needs are our priority. At Sinclair McKinely, we pride ourselves on offering a diverse range of services tailored to individuals, businesses, and nonprofit organisations. Whether you're seeking expert assistance with tax filing, meticulous bookkeeping, or any other financial matter, our dedicated team is here to guide you every step of the way.
               </p>

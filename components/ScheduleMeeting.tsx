@@ -27,6 +27,7 @@ export default function ScheduleMeeting() {
                 alt=""
                 width={600}
                 height={400}
+                className="table"
               />
             </div>
           </div>
