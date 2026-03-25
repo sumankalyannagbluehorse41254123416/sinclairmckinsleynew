@@ -1,7 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ScheduleMeeting() {
+type Props = {
+  title?: string;
+  image?: string;
+};
+
+export default function ScheduleMeeting({ title, image }: Props) {
   return (
     <section className="new_c">
       <div className="container">
@@ -10,8 +17,7 @@ export default function ScheduleMeeting() {
           <div className="col-lg-6">
             <div className="wpb_wrapper_1">
               <h2>
-                <strong>Schedule a meeting</strong> to explore how we enhance
-                your value. <strong>Contact us today.</strong>
+                <strong>{title || "Schedule a meeting"}</strong>
               </h2>
 
               <div className="contact_pay">
@@ -23,8 +29,8 @@ export default function ScheduleMeeting() {
           <div className="col-lg-6">
             <div className="contact_right">
               <Image
-                src="/images/1693553430947.jpeg"
-                alt=""
+                src={image || "/images/default.jpg"}
+                alt="schedule"
                 width={600}
                 height={400}
                 className="table"

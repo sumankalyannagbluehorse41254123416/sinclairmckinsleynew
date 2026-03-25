@@ -2,93 +2,82 @@
 
 import Image from "next/image";
 
-const industries = [
-  {
-    id: 0,
-    title: "Manufacturing and distribution",
-    img: "/images/1691675207218.png",
-    desc: "Manufacturing remains one of the key industries for the UK. In its various guises the UK manufacturing industry employs almost three million people.",
-  },
-  {
-    id: 1,
-    title: "Charities",
-    img: "/images/1691675193197.png",
-    desc: "Accounting for charities and the not-for-profit sector is a specialist area that requires expertise and an understanding of the industry.",
-  },
-  {
-    id: 2,
-    title: "Construction",
-    img: "/images/1691675279251.png",
-    desc: "We understand that issues of cash management, supply chain resilience and meeting tight margins and deadlines are keeping you up at night.",
-  },
-  {
-    id: 3,
-    title: "Hospitality & Entertainment",
-    img: "/images/1691675332485.png",
-    desc: "Our Leisure and Hospitality Team provides specialist accountancy and business advisory expertise to a wide variety of leisure and hospitality businesses.",
-  },
-  {
-    id: 4,
-    title: "Real Estate",
-    img: "/images/1691675379658.png",
-    desc: "Real estate companies must be armed with funding alternatives to optimise client service levels.",
-  },
-  {
-    id: 5,
-    title: "Retail & Wholesale",
-    img: "/images/1691675424263.png",
-    desc: "The retail and wholesale businesses operate on a transformative economic system and face frequent fluctuations.",
-  },
-];
+interface Section {
+  title?: string;
+  shortDescription?: string;
+  description?: string;
+  image?: string;
+  subsections?: Section[];
+}
 
-export default function Industries() {
+interface IndustriesProps {
+  data?: Section;
+}
+
+/* ✅ Remove HTML + Trim text */
+const cleanText = (html?: string, maxLength = 140) => {
+  if (!html) return "";
+
+  const text = html.replace(/<[^>]*>/g, "").trim();
+
+  return text.length > maxLength
+    ? text.slice(0, maxLength) + "..."
+    : text;
+};
+
+export default function Industries({ data }: IndustriesProps) {
+  if (!data) return null;
+
+  const title = data.title;
+  const shortDesc = data.shortDescription;
+
+  const items = data.subsections || [];
+
   return (
     <section>
       <div className="header_information">
-        <h2>Industries</h2>
-
-        <p>
-          At Sinclair McKinsley, we understand that each industry possesses its
-          unique financial intricacies and challenges. Our comprehensive
-          accounting solutions are tailored to address the specific needs of
-          diverse sectors.
-        </p>
+        <h2>{title}</h2>
+        <p>{cleanText(shortDesc, 2000)}</p>
       </div>
 
       <div className="container">
         <div className="row">
-          {industries.map((item) => (
-            <div className="col-lg-4 col-sm-12 up_bottm" key={item.id}>
+          {items.map((item, index) => (
+            <div className="col-lg-4 col-sm-12 up_bottm" key={index}>
               <div className="servies_card">
                 <a
                   data-bs-toggle="modal"
-                  data-bs-target={`#exampleModalToggle${item.id}`}
+                  data-bs-target={`#exampleModalToggle${index}`}
                   role="button"
                 >
                   <div className="services_icon">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      width={80}
-                      height={60}
-                    />
+                    {item.image && (
+                      <Image
+                        src={item.image}
+                        alt={item.title || "industry"}
+                        width={80}
+                        height={60}
+                      />
+                    )}
                   </div>
 
                   <h6>{item.title}</h6>
-                  <p>{item.desc}</p>
+                  <p>{cleanText(item.description, 120)}</p>
                 </a>
               </div>
 
-              {/* Modal */}
+              {/* ✅ Modal */}
               <div
                 className="modal popup_all fade"
-                id={`exampleModalToggle${item.id}`}
+                id={`exampleModalToggle${index}`}
                 tabIndex={-1}
               >
                 <div className="modal-dialog">
                   <div className="modal-content popup_main">
                     <div className="modal_head">
-                      <h5 className="modal-title text-center">{item.title}</h5>
+                      <h5 className="modal-title text-center">
+                        {item.title}
+                      </h5>
 
                       <button
                         type="button"
@@ -99,15 +88,18 @@ export default function Industries() {
 
                     <div className="modal-body details_body">
                       <div className="services_icon back_color">
-                        <Image
-                          src={item.img}
-                          alt={item.title}
-                          width={80}
-                          height={60}
-                        />
+                        {item.image && (
+                          <Image
+                            src={item.image}
+                            alt={item.title || "industry"}
+                            width={80}
+                            height={60}
+                          />
+                        )}
                       </div>
 
-                      <p>{item.desc}</p>
+                      {/* Full cleaned description inside modal */}
+                      <p>{cleanText(item.description, 500)}</p>
                     </div>
                   </div>
                 </div>

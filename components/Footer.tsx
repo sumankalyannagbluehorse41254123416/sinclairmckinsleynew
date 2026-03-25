@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "./ContactForm";
 
 export default function Footer() {
+  function savecontact(): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className="pt-5 pb-5 footer">
       <div className="container footer_icon_box">
@@ -97,7 +102,7 @@ export default function Footer() {
           {/* CONTACT FORM */}
           <div className="col-lg-4 col-sm-12 location" id="contact-us">
             <h4 className="mt-lg-0 mt-sm-3">Contact</h4>
-
+{/* 
             <form id="contact_form" method="POST">
               <div className="mb-3">
                 <input
@@ -156,7 +161,8 @@ export default function Footer() {
 
                 <div className="clearfix"></div>
               </div>
-            </form>
+            </form> */}
+              <ContactForm />
           </div>
 
         </div>

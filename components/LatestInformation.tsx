@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react"; // ✅ ADD THIS
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -25,28 +25,28 @@ const blogData = [
     link: "/blog-details/living-in-downtown-in-the-biggest-city",
   },
   {
-    title: "Mini Budget 2022: Main Takeaways",
+    title: "Discover new adventures over the world",
     image:
-      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1692276875466.jpg",
-    link: "/blog-details/Mini-Budget-2022-Main-Takeaways",
-  },
-  {
-    title: "Mini Budget 2022: Main Takeaways",
-    image:
-      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1692276875466.jpg",
-    link: "/blog-details/Mini-Budget-2022-Main-Takeaways",
+      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992429352.jpg",
+    link: "/blog-details/Discover-new-adventure-over-the-world",
   },
   {
     title: "Living in downtown in the biggest cities",
     image:
-      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992496812.png",
-    link: "/blog-details/living-in-downtown-in-the-biggest-city",
+      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1691992333320.jpg",
+    link: "/blog-details/Living-in-downtown-in-the-biggest-cities",
+  },
+  {
+    title: "Mini Budget 2022: Main Takeaways",
+    image:
+      "https://wip.tezcommerce.com:3304/admin/iUdyog/blog/70/1692276875466.jpg",
+    link: "/blog-details/Mini-Budget-2022-Main-Takeaways",
   },
 ];
 
 export default function LatestInformation() {
-  const prevRef = useRef(null); // ✅ ADD
-  const nextRef = useRef(null); // ✅ ADD
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   return (
     <section id="Latest_information">
@@ -55,13 +55,16 @@ export default function LatestInformation() {
 
         <p>
           In today's rapidly changing world, staying up to date is essential.
+          Our commitment to providing you with the latest information ensures
+          that you are well-equipped to make informed decisions, navigate
+          complexities, and seize new opportunities.
         </p>
       </div>
 
       <div className="bg_information">
-        <div className="container slider_wrapper relative"> {/* ✅ ADD relative */}
+        <div className="container slider_wrapper relative">
 
-          {/* CUSTOM BUTTONS */}
+          
           <div ref={prevRef} className="custom-prev">
             <FiChevronLeft size={14} />
           </div>
@@ -72,8 +75,7 @@ export default function LatestInformation() {
 
           <Swiper
             modules={[Navigation, Autoplay]}
-            onBeforeInit={(swiper) => {   // ✅ IMPORTANT FIX
-              (swiper.params.navigation as any).prevEl = prevRef.current;
+            onBeforeInit={(swiper) => {                 (swiper.params.navigation as any).prevEl = prevRef.current;
               (swiper.params.navigation as any).nextEl = nextRef.current;
             }}
             navigation={{
@@ -100,13 +102,14 @@ export default function LatestInformation() {
                     <Image
                       src={blog.image}
                       alt={blog.title}
-                      width={400}
-                      height={250}
+                      width={392}
+                      height={260}
+                      style={{ width: "392px", height: "260px" }}
                     />
                   </Link>
 
                   <Link className="icome" href={blog.link}>
-                    {blog.title}
+                    {blog?.title}
                   </Link>
                 </div>
               </SwiperSlide>
