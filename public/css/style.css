@@ -358,7 +358,6 @@ a {
 .servies_card h6 {
     font-size: 18px;
     font-weight: 600;
-    margin-top: -14px;
     margin-bottom: 20px;
     color: black;
 }
@@ -484,7 +483,7 @@ a {
 .expri_btn {
     position: absolute;
     z-index: 9;
-    bottom: 26px;
+    bottom: 4px;
     left: 186px;
     align-items: center;
     display: flex;
