@@ -20,6 +20,14 @@ interface Section {
   subsections?: SubSection[];
 }
 
+// 🔥 helper function to clean HTML
+const cleanHTML = (html?: string) => {
+  if (!html) return "";
+
+  const text = html.replace(/<[^>]*>/g, "").trim(); // remove tags + trim
+  return text;
+};
+
 export default function LatestInformation({
   section,
 }: {
@@ -27,12 +35,15 @@ export default function LatestInformation({
 }) {
   const blogs = section?.subsections || [];
 
+  const cleanedDescription = cleanHTML(section?.shortDescription);
+
   return (
     <section id="Latest_information">
       <div className="header_information">
         <h2>{section?.title}</h2>
 
-        <p>{section?.shortDescription}</p>
+        {/* ✅ Only show if not empty */}
+        {cleanedDescription && <p>{cleanedDescription}</p>}
       </div>
 
       <div className="bg_information">

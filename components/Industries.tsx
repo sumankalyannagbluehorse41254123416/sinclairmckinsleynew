@@ -37,7 +37,7 @@ export default function Industries({ data }: IndustriesProps) {
     <section>
       <div className="header_information">
         <h2>{title}</h2>
-        <p>{cleanText(shortDesc, 200)}</p>
+        <p>{cleanText(shortDesc, 2000)}</p>
       </div>
 
       <div className="container">
