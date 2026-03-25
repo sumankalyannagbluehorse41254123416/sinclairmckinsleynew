@@ -41,6 +41,31 @@ export default function LatestInformation({
       </div>
 
       <div className="bg_information">
+        <div className="container slider_wrapper relative">
+
+
+          <div ref={prevRef} className="custom-prev">
+            <FiChevronLeft size={14} />
+          </div>
+
+          <div ref={nextRef} className="custom-next">
+            <FiChevronRight size={14} />
+          </div>
+
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            onBeforeInit={(swiper) => {
+              (swiper.params.navigation as any).prevEl = prevRef.current;
+              (swiper.params.navigation as any).nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
         <div className="container">
           
           <Swiper
