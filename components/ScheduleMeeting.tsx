@@ -33,6 +33,7 @@ export default function ScheduleMeeting({ title, image }: Props) {
                 alt="schedule"
                 width={600}
                 height={400}
+                className="table"
               />
             </div>
           </div>
