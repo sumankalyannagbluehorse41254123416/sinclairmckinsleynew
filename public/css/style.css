@@ -117,7 +117,7 @@ a {
 
 .details_read_more h6 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
     color: #000000;
 }
@@ -210,6 +210,7 @@ a {
     position: relative;
     line-height: 45px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .right_mark li::before {
@@ -281,13 +282,13 @@ a {
 }
 
 #our_services {
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 60px;
 }
 
 .heading {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 
@@ -346,6 +347,7 @@ a {
     height: 370px;
     background-color: #fdfdfd;
     /* cursor: pointer; */
+    margin-bottom: 40px;
 }
 
 .servies_card p {
@@ -431,8 +433,8 @@ a {
 }
 
 .up_bottm {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .servies_card:hover .services_icon {

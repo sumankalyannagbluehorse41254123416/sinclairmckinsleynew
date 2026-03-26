@@ -30,7 +30,6 @@ export default function AboutBanner({ section }: { section?: Section }) {
         backgroundImage: `url(${imageUrl})`,
         height: "650px",
         backgroundSize: "cover",
-        backgroundPosition: "center",
         marginBottom: "32px",
       }}
     >

@@ -66,8 +66,8 @@ export default function AboutSection({
               </div>
 
               <div className="text">
-                <p>{firstPara}</p>
-                <p>{secondPara}</p>
+                <p className="first-para">{firstPara}</p>
+                <p className="second-para">{secondPara}</p>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function AboutSection({
               <p>
                 {remainingParas.length > 0 ? (
                   remainingParas.map((item, index) => (
-                    <span key={index}>
+                    <span key={index} className="second-para">
                       {cleanText(item.description)}
                       {index !== remainingParas.length - 1 && (
                         <>
@@ -91,7 +91,7 @@ export default function AboutSection({
                     </span>
                   ))
                 ) : (
-                  <>
+                  <p className="">
                     Sinclair McKinsley Ltd offers a comprehensive range of
                     services, including Accountancy, Taxation, and Business
                     Advisory.
@@ -101,7 +101,7 @@ export default function AboutSection({
                     <br />
                     <br />
                     Discover the Sinclair McKinsley Ltd difference today.
-                  </>
+                  </p>
                 )}
               </p>
             </div>
