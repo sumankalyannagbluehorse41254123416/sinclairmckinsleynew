@@ -1,4 +1,4 @@
-/* .slider_wrapper {
+.slider_wrapper {
   position: relative;
 }
 
@@ -34,4 +34,7 @@
    width: 20px;
   height: 20px;
 
+}
+.author-name{
+  color: #0d6efd;
 }
