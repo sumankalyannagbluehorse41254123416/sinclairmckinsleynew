@@ -28,9 +28,9 @@ const cleanText = (html?: string, maxLength = 140) => {
 
 export default function Industries({ data }: IndustriesProps) {
 
-  // ✅ ONLY FIX (Bootstrap JS load)
+  // ✅ FIXED: Proper Bootstrap import (no TS error)
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    import("bootstrap");
   }, []);
 
   if (!data) return null;
@@ -51,7 +51,7 @@ export default function Industries({ data }: IndustriesProps) {
           {items.map((item, index) => (
             <div className="col-lg-4 col-sm-12 up_bottm" key={index}>
               
-              {/* CARD (UNCHANGED) */}
+              {/* CARD */}
               <div className="servies_card">
                 <a
                   data-bs-toggle="modal"
@@ -70,13 +70,13 @@ export default function Industries({ data }: IndustriesProps) {
                   </div>
 
                   <h6>{item.title}</h6>
-                  <p>{cleanText(item.description, 120)}</p>
+                  <p>{cleanText(item.description, 240)}</p>
                 </a>
               </div>
 
-              {/* MODAL (UNCHANGED) */}
+              {/* MODAL */}
               <div
-                className="modal popup_all fade"
+                className="modal fade"
                 id={`exampleModalToggle${index}`}
                 tabIndex={-1}
               >
