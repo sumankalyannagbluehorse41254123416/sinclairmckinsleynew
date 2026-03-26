@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.custom-prev ,
+.custom-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

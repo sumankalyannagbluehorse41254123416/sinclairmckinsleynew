@@ -37,7 +37,7 @@
 .card-badge {
   text-transform: uppercase;
   background-color: #fff;
-  color: #000000;
+  color: #000000 !important;
   padding: 2px 8px;
   border-radius: 70px;
   margin: 0;
@@ -61,7 +61,7 @@
 .card-body h1 {
   font-size: 18px;
   margin: 8px 0;
-  color: #000;
+  color: #000000 !important;
   font-weight: 600;
 }
 
