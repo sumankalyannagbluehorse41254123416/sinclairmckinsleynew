@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -41,48 +42,30 @@ export default function LatestInformation({
       </div>
 
       <div className="bg_information">
-        <div className="container slider_wrapper relative">
+        <div className="container slider_wrapper">
 
-
-          <div ref={prevRef} className="custom-prev">
+          {/* ✅ Custom Navigation Buttons */}
+          <div className="custom-prev">
             <FiChevronLeft size={14} />
           </div>
 
-          <div ref={nextRef} className="custom-next">
+          <div className="custom-next">
             <FiChevronRight size={14} />
           </div>
 
           <Swiper
             modules={[Navigation, Autoplay]}
-            onBeforeInit={(swiper) => {
-              (swiper.params.navigation as any).prevEl = prevRef.current;
-              (swiper.params.navigation as any).nextEl = nextRef.current;
-            }}
             navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
+              prevEl: ".custom-prev",
+              nextEl: ".custom-next",
             }}
+            loop={true}
+            spaceBetween={20}
+            slidesPerView={3}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
             }}
-        <div className="container">
-          
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation
-            loop={true}
-            spaceBetween={20}
-            slidesPerView={3}
-
-            // 🔥 KEY PART FOR CONTINUOUS SLIDE
-            autoplay={{
-              delay: 0, // no gap
-              disableOnInteraction: false,
-              pauseOnMouseEnter: false,
-            }}
-            speed={3000} // higher = smoother continuous movement
-
             breakpoints={{
               320: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
@@ -104,6 +87,7 @@ export default function LatestInformation({
                         alt={blog?.title || "blog"}
                         width={392}
                         height={260}
+                        className="w-full h-full"
                       />
                     </Link>
 
