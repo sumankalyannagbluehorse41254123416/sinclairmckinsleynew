@@ -18,7 +18,7 @@ export default function ClientSpeak() {
 
       <div className="cl_inner">
         <div className="cl_left">
-          <h3>Client Speak</h3>
+          <h3 className="clinet">Client Speak</h3>
         </div>
 
         <Image

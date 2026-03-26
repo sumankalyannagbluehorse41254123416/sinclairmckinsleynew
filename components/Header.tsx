@@ -52,7 +52,6 @@ export default function Header() {
                 <li>
                   <a href="#contact-us">Contact Us</a>
                 </li>
-
                 <li>
                   <Link href="/blog">Blog</Link>
 
