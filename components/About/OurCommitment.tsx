@@ -22,7 +22,7 @@ export default function OurCommitment({
         <div className="our">
           <h3>{title || "Our Commitment"}</h3>
 
-          <p>
+          <p className="second-para">
             {description ||
               "At Sinclair McKinsley Ltd, we believe that every business has the potential to flourish. Our mission is to guide and support our clients on their journey towards sustainable success."}
           </p>
