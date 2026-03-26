@@ -42,8 +42,17 @@ export default function LatestInformation({
       </div>
 
       <div className="bg_information">
-        <div className="container">
-          
+        <div className="container slider_wrapper">
+
+          {/* ✅ Custom Navigation Buttons */}
+          <div className="custom-prev">
+            <FiChevronLeft size={14} />
+          </div>
+
+          <div className="custom-next">
+            <FiChevronRight size={14} />
+          </div>
+
           <Swiper
             modules={[Navigation, Autoplay]}
             navigation={{
