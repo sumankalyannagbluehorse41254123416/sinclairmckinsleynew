@@ -1,9 +1,9 @@
-.slider_wrapper {
+/* .slider_wrapper {
   position: relative;
 }
 
-.custom-prev,
-.custom-next {
+.swiper-button-prev,
+.swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -11,11 +11,14 @@
   width: 40px;
   height: 40px;
   background: white;
-  color: gray;
-  display: flex;
-  align-items: center;
+  color: grey;
+
+  width: 30px;    
+
+  display: flex; 
+  align-items: center; 
   justify-content: center;
-  cursor: pointer;
+
   border-radius: 50%;
   transition: 0.3s;
 }
