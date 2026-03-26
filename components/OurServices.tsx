@@ -39,7 +39,7 @@ export default function OurServices({
         <div className="row">
           <div className="col-lg-12">
             <div className="heading">
-              <h2>{sectionTitle}</h2>
+              <h2 className="titleservice">{sectionTitle}</h2>
               <p className="para">{shortDescription}</p>
             </div>
           </div>

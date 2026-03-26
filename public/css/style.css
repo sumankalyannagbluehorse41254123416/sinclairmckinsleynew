@@ -119,6 +119,7 @@ a {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
+    color: #000000;
 }
 
 .more_btn a {
@@ -137,6 +138,8 @@ a {
 .details_read_more p {
     margin-bottom: 20px;
     font-size: 13px;
+    color: #000000;
+    font-weight: 500;
 }
 
 .sinclair_img_side img {
@@ -418,6 +421,7 @@ a {
 
 .learn_more a {
     color: var(--drak_color);
+    font-weight: 600;
 }
 
 .learn_more a i {
