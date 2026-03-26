@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 
 interface Section {
   title?: string;
@@ -26,11 +27,16 @@ const cleanText = (html?: string, maxLength = 140) => {
 };
 
 export default function Industries({ data }: IndustriesProps) {
+
+  // ✅ ONLY FIX (Bootstrap JS load)
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
   if (!data) return null;
 
   const title = data.title;
   const shortDesc = data.shortDescription;
-
   const items = data.subsections || [];
 
   return (
@@ -44,6 +50,8 @@ export default function Industries({ data }: IndustriesProps) {
         <div className="row">
           {items.map((item, index) => (
             <div className="col-lg-4 col-sm-12 up_bottm" key={index}>
+              
+              {/* CARD (UNCHANGED) */}
               <div className="servies_card">
                 <a
                   data-bs-toggle="modal"
@@ -66,7 +74,7 @@ export default function Industries({ data }: IndustriesProps) {
                 </a>
               </div>
 
-              {/* ✅ Modal */}
+              {/* MODAL (UNCHANGED) */}
               <div
                 className="modal popup_all fade"
                 id={`exampleModalToggle${index}`}
@@ -74,6 +82,7 @@ export default function Industries({ data }: IndustriesProps) {
               >
                 <div className="modal-dialog">
                   <div className="modal-content popup_main">
+                    
                     <div className="modal_head">
                       <h5 className="modal-title text-center">
                         {item.title}
@@ -98,12 +107,13 @@ export default function Industries({ data }: IndustriesProps) {
                         )}
                       </div>
 
-                      {/* Full cleaned description inside modal */}
                       <p>{cleanText(item.description, 500)}</p>
                     </div>
+
                   </div>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
