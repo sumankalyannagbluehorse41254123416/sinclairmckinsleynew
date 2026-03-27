@@ -1,71 +1,61 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    document.body.classList.toggle("menu-open");
+  };
+
   return (
-    <header
-      className="header_area"
-      id="mynav"
-      style={{ backgroundColor: "white" }}
-    >
-      <div className="main_header_area animated">
+    <header className="header_area" id="mynav">
+      <div className="main_header_area">
         <div className="container">
-          <nav id="navigation1" className="navigation">
+          <nav className="navigation">
+
             <div className="nav-header">
-              <a className="nav-brand" href="https://www.sinclairmckinsley.co.uk">
+              <Link href="/" className="nav-brand">
                 <Image
                   src="/images/sinkot_logo.jpg"
                   alt="logo"
                   width={270}
-                  height={68.06}
+                  height={68}
                 />
-              </a>
+              </Link>
 
-              <div className="nav-toggle"></div>
+              {/* Hamburger */}
+              <div
+                className={`nav-toggle ${menuOpen ? "active" : ""}`}
+                onClick={toggleMenu}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
 
-            <div className="nav-menus-wrapper">
-              <ul className="nav-menu align-to-right menu menu-1">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
+            {/* Overlay */}
+            <div
+              className={`menu-overlay ${menuOpen ? "active" : ""}`}
+              onClick={toggleMenu}
+            ></div>
 
-                <li>
-                  <Link href="/about">About Us</Link>
-                </li>
-
-                <li>
-                  <Link href="/#our_services">Services</Link>
-
-                  {/*
-                  <ul className="nav-dropdown">
-                    <li>
-                      <a href="javascript:void(0);">Menu Level</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);">Menu Level</a>
-                    </li>
-                  </ul>
-                  */}
-                </li>
-
-                <li>
-                  <a href="#contact-us">Contact Us</a>
-                </li>
-
-                <li>
-                  <Link href="/blog">Blog</Link>
-
-                  {/*
-                  <ul className="nav-dropdown">
-                    <li>
-                      <Link href="/blog-details">Blog Detail</Link>
-                    </li>
-                  </ul>
-                  */}
-                </li>
+            {/* Menu */}
+            <div className={`nav-menus-wrapper ${menuOpen ? "open" : ""}`}>
+              <ul className="nav-menu">
+                <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
+                <li><Link href="/about" onClick={toggleMenu}>About Us</Link></li>
+                <li><Link href="/#our_services" onClick={toggleMenu}>Services</Link></li>
+                <li><a href="#contact-us" onClick={toggleMenu}>Contact Us</a></li>
+                <li><Link href="/blog" onClick={toggleMenu}>Blog</Link></li>
               </ul>
             </div>
+
           </nav>
         </div>
       </div>

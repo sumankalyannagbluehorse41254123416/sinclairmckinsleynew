@@ -1160,6 +1160,7 @@ html {
   list-style: none;
   line-height: normal;
   font-size: 0;
+  display: flex;
 }
 
 .navigation-portrait .nav-menu {

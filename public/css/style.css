@@ -31,12 +31,11 @@ a {
 
 .top_header {
     background-color: var(--main_color);
-    padding: 25px;
+    padding: 15px;
 }
 
 .contact_header {
     float: left;
-    margin-top: -10px;
 }
 
 .view_more a {
@@ -66,7 +65,7 @@ a {
 
 .header_social {
     float: right;
-    margin-top: -10px;
+    
 }
 
 .mr {
