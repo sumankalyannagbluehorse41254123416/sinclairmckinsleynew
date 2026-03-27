@@ -52,6 +52,7 @@ a {
 .view_more a:hover {
     background-color: unset;
     border: 0.5px solid white;
+    color: #0174e1;
 }
 
 .contact_header ul {
