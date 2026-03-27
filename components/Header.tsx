@@ -12,7 +12,7 @@ export default function Header() {
         <div className="container">
           <nav id="navigation1" className="navigation">
             <div className="nav-header">
-              <a className="nav-brand" href="https://www.sinclairmckinsley.co.uk">
+              <a className="nav-brand" href="#">
                 <Image
                   src="/images/sinkot_logo.jpg"
                   alt="logo"
