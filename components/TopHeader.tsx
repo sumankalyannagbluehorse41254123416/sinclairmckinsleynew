@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 export default function TopHeader() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -41,8 +40,8 @@ export default function TopHeader() {
       <div className="container">
         <div className="social">
           <div className="contact_header">
-            <ul>
-              <li>
+            <ul className="">
+              <li className="email">
                 <a href="mailto:info@sinclairmckinsley.co.uk">
                   <i className="fa fa-envelope-o"></i>
                   info@sinclairmckinsley.co.uk
