@@ -18,9 +18,6 @@ import TopHeader from "@/components/TopHeader";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-
-
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -45,9 +42,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <TopHeader />
-           <Header />
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

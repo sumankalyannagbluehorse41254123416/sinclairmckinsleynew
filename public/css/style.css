@@ -31,12 +31,11 @@ a {
 
 .top_header {
     background-color: var(--main_color);
-    padding: 25px;
+    padding: 15px;
 }
 
 .contact_header {
     float: left;
-    margin-top: -10px;
 }
 
 .view_more a {
@@ -52,6 +51,7 @@ a {
 .view_more a:hover {
     background-color: unset;
     border: 0.5px solid white;
+    color: #0174e1;
 }
 
 .contact_header ul {
@@ -65,7 +65,7 @@ a {
 
 .header_social {
     float: right;
-    margin-top: -10px;
+    
 }
 
 .mr {
