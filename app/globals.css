@@ -351,7 +351,7 @@ body.menu-open {
   }
 
   .icome {
-    font-size: 10px !important;
+    font-size: 11px !important;
   }
 
   .bg_information {
@@ -384,6 +384,13 @@ body.menu-open {
 }
 .join_text{
   gap: 10px !important;
+}
+.custom-prev{
+  left: 5px !important;
+}
+.custom-next{
+  right: 5px !important;
+
 }
 
 }
