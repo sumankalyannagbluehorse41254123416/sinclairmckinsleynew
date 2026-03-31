@@ -14,7 +14,6 @@ import "../public/css/slick-theme.css";
 import "../public/css/slick.css";
 import "../public/css/style.css";
 
-import TopHeader from "@/components/TopHeader";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -41,7 +40,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <TopHeader />
         <Header />
         {children}
         <Footer />
