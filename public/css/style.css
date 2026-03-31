@@ -313,6 +313,7 @@ a {
     border-bottom-right-radius: 32px;
     margin: 0 auto;
     margin-bottom: 50px;
+    left: -13px;
 }
 
 .icon_active {
@@ -337,7 +338,7 @@ a {
     border: 3px solid #f2f2f2;
     border-bottom-right-radius: 53px;
     transition: all 500ms ease;
-    height: 370px;
+    height: auto;
     background-color: #fdfdfd;
     /* cursor: pointer; */
     margin-bottom: 40px;
@@ -1072,7 +1073,6 @@ body .sk-reviewer-pic img {
 @media (max-width: 575px) {
     .clients_wrap {
         padding: 50px 0;
-        margin-bottom: 590px;
     }
 
     .clients_wrap .cl_shape {
@@ -1085,18 +1085,27 @@ body .sk-reviewer-pic img {
         display: block;
         margin-top: 115px;
         padding: 0px 15px;
+        position: relative;
+        top: -110px;
     }
 
     .clients_wrap .cl_inner .cl_left {
-        top: auto;
-        right: auto;
-        bottom: 100%;
-        left: 50%;
-        transform: translate(-50%, 0px);
-        height: 110px;
+        text-align: center;
         width: 100%;
         max-width: 300px;
-        text-align: center;
+        height: 110px;
+        inset: auto auto 100% 50%;
+        transform: translate(-50%);
+        position: relative;
+        top: -4px;
+        left: 171px;
+        margin-top: 34px;
+
+    }
+
+    .testim .wrap {
+        top: 380px;
+        left: -13px;
     }
 
     .clients_wrap .cl_inner .cl_left h3 {
@@ -1120,6 +1129,14 @@ body .sk-reviewer-pic img {
 
     .clients_wrap .bg_img {
         height: 842px;
+    }
+
+    .header_information {
+        margin-top: 20px;
+    }
+
+    .header_information h2 {
+        font-size: 32px;
     }
 }
 
@@ -1423,6 +1440,7 @@ html {
 
 .footer .copyright p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
 }
 
 .location {
@@ -1564,7 +1582,8 @@ html {
         bottom: 15px;
         left: 96px;
     }
-    .blue_back{
+
+    .blue_back {
         height: 480px;
     }
 }
@@ -1912,33 +1931,33 @@ html {
 }
 
 .about_join {
-  background-color: var(--main_color);
-  padding: 30px 0; 
+    background-color: var(--main_color);
+    padding: 30px 0;
 }
 
 .join_text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .join_text h4 {
-  color: #fff;
-  font-size: 34px;
-  margin: 0;
-  font-weight: 500;
+    color: #fff;
+    font-size: 34px;
+    margin: 0;
+    font-weight: 500;
 }
 
 .join_text a {
-  background-color: #e6e6e6;
-  padding: 12px 45px;
-  border-radius: 50px;
-  text-decoration: none;
-  color: #0d6efd;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: 0.3s;
+    background-color: #e6e6e6;
+    padding: 12px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #0d6efd;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
 
