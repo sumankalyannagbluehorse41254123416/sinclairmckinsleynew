@@ -326,8 +326,29 @@ body.menu-open {
 }
 
 
-@media (min-width: 575px){
+@media (max-width: 575px){
   .about {
-    height: 350px;
+    height: 350px !important;
   }
+  .about_text h1{
+    padding-top: 150px !important;
+  }
+  #our_services{
+    margin-bottom: 30px !important;
+  }
+  .servies_card{
+    margin-bottom: 20px !important;
+  }
+  .servies_card {
+    padding: 10px !important;
+  }
+  .icome{
+    font-size: 10px !important;
+  }
+  .bg_information{
+    height: 428px !important;
+  }
+      .expri_btn {
+        left: 59px !important;
+      }
 }

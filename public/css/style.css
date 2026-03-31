@@ -313,6 +313,7 @@ a {
     border-bottom-right-radius: 32px;
     margin: 0 auto;
     margin-bottom: 50px;
+    left: -13px;
 }
 
 .icon_active {
@@ -337,7 +338,7 @@ a {
     border: 3px solid #f2f2f2;
     border-bottom-right-radius: 53px;
     transition: all 500ms ease;
-    height: 370px;
+    height: auto;
     background-color: #fdfdfd;
     /* cursor: pointer; */
     margin-bottom: 40px;
@@ -1120,6 +1121,12 @@ body .sk-reviewer-pic img {
 
     .clients_wrap .bg_img {
         height: 842px;
+    }
+    .header_information{
+    margin-top: 20px;
+    }
+    .header_information h2{
+        font-size: 32px;
     }
 }
 
