@@ -12,9 +12,7 @@
 }
 
 @media (max-width: 767px) {
-    .card-container{
-        width: 325px;
-    }
+    
     .nav-menu>li>a {
         font-size: 21px;
     }

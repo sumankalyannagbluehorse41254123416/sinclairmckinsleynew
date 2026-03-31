@@ -174,6 +174,7 @@
   height: 28px;
   cursor: pointer;
   z-index: 1001;
+  display: none;
 }
 
 /* lines */
@@ -245,6 +246,9 @@
   .nav-menus-wrapper .nav-menu li a {
     color: #fff;
     padding: 10px 10px 10px 30px;
+    display: block;
+  }
+  .nav-menus-wrapper.open .menu-close{
     display: block;
   }
 }
@@ -319,4 +323,11 @@ body.menu-open {
 .nav-menu li a:hover::after {
   transform: scaleX(1);           
   transform-origin: left;         
+}
+
+
+@media (min-width: 575px){
+  .about {
+    height: 350px;
+  }
 }
