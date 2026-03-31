@@ -200,8 +200,8 @@
         text-align: justify;
     }
     .about_join {
-        height: 130px;
         text-align: center;
+        padding: 0px;
     }
     .join_text h4 {
         float: unset;
