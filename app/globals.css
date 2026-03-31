@@ -174,6 +174,7 @@
   height: 28px;
   cursor: pointer;
   z-index: 1001;
+  display: none;
 }
 
 /* lines */
@@ -245,6 +246,9 @@
   .nav-menus-wrapper .nav-menu li a {
     color: #fff;
     padding: 10px 10px 10px 30px;
+    display: block;
+  }
+  .nav-menus-wrapper.open .menu-close{
     display: block;
   }
 }
@@ -321,13 +325,9 @@ body.menu-open {
   transform-origin: left;         
 }
 
-.menu-close {
-  display: none;
-}
 
-/* 📱 show only on mobile */
-@media (max-width: 991px) {
-  .nav-menus-wrapper.open .menu-close {
-    display: block;
+@media (min-width: 575px){
+  .about {
+    height: 350px;
   }
 }
