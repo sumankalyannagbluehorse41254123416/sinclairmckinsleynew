@@ -103,7 +103,7 @@ export default function LatestInformation({
 
         <div className="view_more mt-5 text-center">
           <Link href="/blog">
-            VIEW MORE one class <i className="fa fa-plus"></i>
+            VIEW MORE <i className="fa fa-plus"></i>
           </Link>
         </div>
       </div>
